@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TDMPW_411_3P_PR01.MainPage">
+    <Grid  x:Name="background">
+        <Grid.Background>
+
+            <LinearGradientBrush
+                EndPoint="0,1" >
+                <GradientStop Offset="0.0" Color="DarkBlue"></GradientStop>
+                <GradientStop Offset="1" Color="DeepSkyBlue"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid  RowDefinitions=".6* , .4*">
+            <VerticalStackLayout >
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="200" VerticalOptions="Center">
+                    <VerticalStackLayout VerticalOptions="Center">
+                    <Label FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Text="{Binding GameStatus}"
+                           VerticalTextAlignment="Center"
+                   />
+                    <Label FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Text="{Binding TxtPuntaje}"
+                           VerticalTextAlignment="Center"
+                   />
+                    </VerticalStackLayout>
+                    <Button HorizontalOptions="End"
+                    Text="Reiniciar"
+                    WidthRequest="100"
+                    Clicked="Button_Clicked"
+                            BackgroundColor="Orange"
+                            CornerRadius="25"
+                            Margin="10"
+                            FontAttributes="Bold"
+                            TextColor="Black"
+                            
+                    />
+                </HorizontalStackLayout>
+                <Frame Margin="20"
+                       MaximumWidthRequest="400"
+                      >
+                <Image HeightRequest="200"
+                   Source="{Binding CurrentImage}"
+                    Aspect="AspectFit"
+                       />
+                </Frame>
+                <Label FontSize="20"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                   Text="{Binding Spotlight}"
+                       FontFamily="regular"
+                   />
+                <Label FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   Text="{Binding Message}"
+                       FontFamily="regular"/>
+                
+                <Entry x:Name="txtAnswer" Margin="20" BackgroundColor="DarkBlue" />
+                <Button Text="Enviar" HeightRequest="150" Margin="20"
+                        Clicked="Button_Clicked_1"
+                        x:Name="juan"
+                        FontSize="70"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        Opacity=".5"
+                        CornerRadius="90"/>
+                    
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
+
